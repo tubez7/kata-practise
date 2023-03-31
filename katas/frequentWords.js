@@ -33,7 +33,7 @@ function topThreeWords(str) {
   }
   occurrences.sort((a, b) => b - a);
   occurrences.splice(3);
-  
+
   for (x in refObject) {
     if (occurrences.includes(refObject[x])) {
       if (frequentWords.length < 3) {
