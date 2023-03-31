@@ -7,12 +7,7 @@ function topThreeWords(str) {
   const lowerCaseStr = str.toLowerCase();
   const regex = /[^a-z']/i;
   const words = lowerCaseStr.split(regex); // fails the bonus points
-
-  //   console.log(words, "words array");
-
   const filteredWords = words.filter((word) => word !== ""); //removes empty strings from the array.
-
-  //   console.log(filteredWords, "filtered words");
 
   const refObject = {};
 
@@ -24,8 +19,6 @@ function topThreeWords(str) {
     }
   });
 
-  //   console.log(refObject, "refObj");
-
   const occurrences = [];
 
   for (x in refObject) {
@@ -33,6 +26,7 @@ function topThreeWords(str) {
   }
   occurrences.sort((a, b) => b - a);
   occurrences.splice(3);
+  console.log(occurrences, "occurrences");
 
   for (x in refObject) {
     if (occurrences.includes(refObject[x])) {
@@ -42,8 +36,6 @@ function topThreeWords(str) {
       }
     }
   }
-  console.log(occurrences, "occurrences");
-  // console.log(frequentWords, "frq words array");
 
   let i = 0;
   let j = 0;
@@ -61,7 +53,6 @@ function topThreeWords(str) {
   }
 
   console.log(returnArray, "return v");
-
   return returnArray;
 }
 

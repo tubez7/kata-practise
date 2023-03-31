@@ -48,4 +48,10 @@ describe("topThreeWords()", () => {
 
     expect(topThreeWords(input)).toEqual(["a", "of", "on"]);
   });
+
+  test("#9. test edge cases for punctuation", () => {
+    const input = topThreeWords("'abc, abc', 'abc'");
+
+    expect(input).toEqual(["'abc","abc'", "'abc'"]);
+  });
 });
