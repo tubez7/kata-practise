@@ -24,4 +24,10 @@ describe("topThreeWords()", () => {
 
     expect(input).toEqual(["aaa", "bb"]);
   });
+
+  it("should return an array containing the words of the input string in lowercase when passed a 2 word string", () => {
+    const input = topThreeWords("AAA bb. C! dddd, c, Bb/aAA BB!AaA aaa");
+
+    expect(input).toEqual(["aaa", "bb", "c"]);
+  });
 });
