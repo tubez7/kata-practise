@@ -1,4 +1,5 @@
 function circleSlash(n) {
+  const even = n % 2 === 0 ? true : false;
   const numbers = [];
 
   while (n > 0) {
@@ -7,6 +8,16 @@ function circleSlash(n) {
     }
     n--;
   }
+  console.log(numbers, "numbers array");
+
+  if (numbers.length > 1) {
+    if (even) {
+      numbers.shift();
+    } else {
+      numbers.pop();
+    }
+  }
+
   return numbers[0];
 }
 

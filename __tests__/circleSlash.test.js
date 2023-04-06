@@ -18,4 +18,10 @@ describe("circleSlash()", () => {
 
     expect(input).toBe(3);
   });
+
+  test("#4: returns 1 when n = 4", () => {
+    const input = circleSlash(4);
+
+    expect(input).toBe(1);
+  });
 });
