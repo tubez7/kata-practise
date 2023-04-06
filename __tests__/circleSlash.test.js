@@ -24,4 +24,10 @@ describe("circleSlash()", () => {
 
     expect(input).toBe(1);
   });
+
+  test("#5: returns 3 when n = 5", () => {
+    const input = circleSlash(5);
+
+    expect(input).toBe(3);
+  });
 });
