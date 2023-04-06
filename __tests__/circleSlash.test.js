@@ -6,4 +6,10 @@ describe("circleSlash()", () => {
 
     expect(input).toBe(1);
   });
+
+  test("#2: returns 1 when n = 2", () => {
+    const input = circleSlash(2);
+
+    expect(input).toBe(1);
+  });
 });
