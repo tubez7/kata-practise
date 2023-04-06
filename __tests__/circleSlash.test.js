@@ -36,4 +36,10 @@ describe("circleSlash()", () => {
 
     expect(input).toBe(5);
   });
+
+  test("#7: returns 7 when n = 7", () => {
+    const input = circleSlash(7);
+
+    expect(input).toBe(7);
+  });
 });

@@ -16,11 +16,10 @@ function circleSlash(n) {
     console.log(numbers, "num post splice");
     numbers.pop();
     console.log(numbers, "num post pop");
-    even = !even;
   }
 
   while (numbers.length > 1) {
-    if (!even) {
+    if (numbers.length % 2 === 1) {
       console.log("splice block in loop triggered");
       numbers.splice(0, 0, numbers[numbers.length - 1]);
       console.log(numbers, "num post splice");
@@ -30,13 +29,12 @@ function circleSlash(n) {
     const slashedNumbers = [];
     console.log(numbers, "at start of loop");
     numbers.forEach((num, i) => {
-        if (i % 2 === 0) {
-            slashedNumbers.push(num);
-        }
+      if (i % 2 === 0) {
+        slashedNumbers.push(num);
+      }
     });
     console.log(slashedNumbers, "slashed");
     numbers = [...slashedNumbers];
-    even = !even;
     console.log(numbers, "re-assigned numbers");
   }
 
