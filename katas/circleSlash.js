@@ -8,34 +8,23 @@ function circleSlash(n) {
     }
     n--;
   }
-  console.log(numbers, "numbers array");
-
-  if (!even) {
-    console.log("splice block triggered");
-    numbers.splice(0, 0, numbers[numbers.length - 1]);
-    console.log(numbers, "num post splice");
-    numbers.pop();
-    console.log(numbers, "num post pop");
-  }
 
   while (numbers.length > 1) {
-    if (numbers.length % 2 === 1) {
-      console.log("splice block in loop triggered");
+    if (!even) {
       numbers.splice(0, 0, numbers[numbers.length - 1]);
-      console.log(numbers, "num post splice");
       numbers.pop();
-      console.log(numbers, "num post pop");
     }
+
     const slashedNumbers = [];
-    console.log(numbers, "at start of loop");
+
     numbers.forEach((num, i) => {
+      even = numbers.length % 2 === 0 ? true : false;
       if (i % 2 === 0) {
         slashedNumbers.push(num);
       }
     });
-    console.log(slashedNumbers, "slashed");
+
     numbers = [...slashedNumbers];
-    console.log(numbers, "re-assigned numbers");
   }
 
   return numbers[0];

@@ -42,4 +42,16 @@ describe("circleSlash()", () => {
 
     expect(input).toBe(7);
   });
+
+  test("#8: returns 1 when n = 8", () => {
+    const input = circleSlash(8);
+
+    expect(input).toBe(1);
+  });
+
+  test("#9: returns 17 when n = 264", () => {
+    const input = circleSlash(264);
+
+    expect(input).toBe(17);
+  });
 });
