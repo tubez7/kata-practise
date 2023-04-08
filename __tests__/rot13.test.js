@@ -24,4 +24,10 @@ describe("rot13()", () => {
 
     expect(input).toBe("n o");
   });
+
+  test("#5 - returns the correctly deciphered string for a multi character input with a space and letters from the 2nd half of alphabet", () => {
+    const input = rot13("a bz");
+
+    expect(input).toBe("n om");
+  });
 });

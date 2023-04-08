@@ -10,8 +10,10 @@ function rot13(str) {
   const rotCodes = strCodes.map((code) => {
     if (code === 32) {
       return code;
-    } else {
+    } else if (code < 110) {
       return code + 13;
+    } else {
+      return code - 13;
     }
   });
 
