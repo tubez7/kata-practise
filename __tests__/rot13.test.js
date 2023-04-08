@@ -18,4 +18,10 @@ describe("rot13()", () => {
 
     expect(input).toBe("no");
   });
+
+  test("#4 - returns the correctly deciphered string for a multi character input with a space", () => {
+    const input = rot13("a b");
+
+    expect(input).toBe("n o");
+  });
 });
