@@ -35,9 +35,8 @@ function rot13(str) {
     }
   });
 
-  const decipheredCodes = rotCodes.map((code) => String.fromCharCode(code));
+  return rotCodes.map((code) => String.fromCharCode(code)).join("");
 
-  return decipheredCodes.join("");
 }
 
 module.exports = rot13;

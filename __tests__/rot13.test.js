@@ -36,4 +36,11 @@ describe("rot13()", () => {
 
     expect(input).toBe("n oM");
   });
+
+  test("#7 - returns the correctly deciphered string for a complex string", () => {
+    const input = "This is my first ROT13 exercise!";
+    const output = "Guvf vf zl svefg EBG13 rkrepvfr!";
+
+    expect(rot13(input)).toBe(output);
+  });
 });
