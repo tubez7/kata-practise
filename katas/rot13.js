@@ -7,13 +7,31 @@ function rot13(str) {
     strCodes.push(str.charCodeAt(i));
   }
 
+  const aToMCodes = [];
+  const nToZCodes = [];
+  let counter = 13;
+  let capA = 65;
+  let lowerA = 97;
+  let capN = 78;
+  let lowerN = 110;
+
+  while (counter > 0) {
+    aToMCodes.push(capA, lowerA);
+    nToZCodes.push(capN, lowerN);
+    capA++;
+    lowerA++;
+    capN++;
+    lowerN++;
+    counter--;
+  }
+
   const rotCodes = strCodes.map((code) => {
-    if (code === 32) {
-      return code;
-    } else if (code < 110) {
+    if (aToMCodes.includes(code)) {
       return code + 13;
-    } else {
+    } else if (nToZCodes.includes(code)) {
       return code - 13;
+    } else {
+      return code;
     }
   });
 
