@@ -17,8 +17,9 @@ function circleSlash(n) {
 
     const slashedNumbers = [];
 
+    even = numbers.length % 2 === 0 ? true : false;
+    
     numbers.forEach((num, i) => {
-      even = numbers.length % 2 === 0 ? true : false;
       if (i % 2 === 0) {
         slashedNumbers.push(num);
       }
