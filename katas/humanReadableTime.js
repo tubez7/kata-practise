@@ -5,7 +5,7 @@ function humanReadable(seconds) {
   let secString = "00";
   let mins = 0;
   let minString = "00";
-  let hrs = "00";
+  let hrString = "00";
 
   while (seconds > 0) {
     if (seconds < 60) {
@@ -15,8 +15,8 @@ function humanReadable(seconds) {
         secString = "0" + secString;
       }
       seconds = 0;
-    } else if (seconds < 3599) {
-      mins += seconds / 60;
+    } else if (seconds < 3600) {
+      mins += Math.floor(seconds / 60);
       minString = mins.toString();
       if (mins < 10) {
         minString = "0" + minString;
@@ -26,9 +26,9 @@ function humanReadable(seconds) {
     }
   }
 
-  console.log(`${hrs}:${minString}:${secString}`, "return value");
+  console.log(`${hrString}:${minString}:${secString}`, "return value");
 
-  return `${hrs}:${minString}:${secString}`;
+  return `${hrString}:${minString}:${secString}`;
 }
 
 module.exports = humanReadable;

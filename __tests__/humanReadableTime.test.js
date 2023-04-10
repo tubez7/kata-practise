@@ -28,4 +28,25 @@ describe("humanReadable()", () => {
 
     expect(input).toBe(output);
   });
+
+  test("#5 returns '00:01:01' when argument passed is 61", () => {
+    const input = humanReadable(61);
+    const output = "00:01:01";
+
+    expect(input).toBe(output);
+  });
+
+  test("#6 returns '00:01:59' when argument passed is 119", () => {
+    const input = humanReadable(119);
+    const output = "00:01:59";
+
+    expect(input).toBe(output);
+  });
+
+  test("#7 returns '00:59:59' when argument passed is 3599", () => {
+    const input = humanReadable(3599);
+    const output = "00:59:59";
+
+    expect(input).toBe(output);
+  });
 });
