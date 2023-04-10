@@ -1,10 +1,10 @@
 function humanReadable(seconds) {
-  if (!seconds) return "00:00:00";
 
   let secs = 0;
   let secString = "00";
   let mins = 0;
   let minString = "00";
+  let hrs = 0;
   let hrString = "00";
 
   while (seconds > 0) {
@@ -22,11 +22,15 @@ function humanReadable(seconds) {
         minString = "0" + minString;
       }
       seconds -= 60 * mins;
-      console.log(seconds, "after deduction");
+    } else if (seconds > 3599) {
+      hrs += Math.floor(seconds / 3600);
+      hrString = hrs.toString();
+      if (hrs < 10) {
+        hrString = "0" + hrString;
+      }
+      seconds -= 3600 * hrs;
     }
   }
-
-  console.log(`${hrString}:${minString}:${secString}`, "return value");
 
   return `${hrString}:${minString}:${secString}`;
 }
