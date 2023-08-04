@@ -1,17 +1,5 @@
 const longText = require("../katas/longText.js");
 
-// describe("longText", () => {
-//   it("extends vowels", () => {
-//     expect(longText("Hello, world!", 3)).toBe("Heeellooo, wooorld!");
-//     expect(longText("CodePen is cool!", 4)).toBe(
-//       "CoooodeeeePeeeen iiiis cooooooool!"
-//     );
-//     expect(longText("Challenges", 10)).toBe(
-//       "Chaaaaaaaaaalleeeeeeeeeengeeeeeeeeees"
-//     );
-//   });
-// });
-
 describe("longText()", () => {
   it("extends vowels", () => {
     const input = "Hello, world!";

@@ -13,4 +13,11 @@ function longText(text, n) {
   return lengthenedStr;
 }
 
+const someFunc = (test) => {
+  const someting = "";
+  
+}
+
+// const longText = (text, n) => text.replaceAll(/([aeiou])/g, "$1".repeat(n));
+
 module.exports = longText;
