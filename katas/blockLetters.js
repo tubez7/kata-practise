@@ -13,8 +13,20 @@ function blockPrint(input) {
       let j = 0;
 
       while (j < 5) {
-        const blockLetter = breakCount < 1 ? alpha.get(input[i].toLowerCase()).slice(breakCount) : alpha.get(input[i].toLowerCase()).slice((breakCount * 5) + 1);
-        blockStr += blockLetter[j];
+        // const blockLetter = breakCount < 1 ? alpha.get(input[i].toLowerCase()).slice(breakCount) : alpha.get(input[i].toLowerCase()).slice((breakCount * 5) + 1);
+        
+        // blockStr += blockLetter[j];
+
+        if (breakCount < 1) {
+          const blockLetter = alpha.get(input[i].toLowerCase()).slice(breakCount);
+          console.log(blockLetter, "sliced in < 1");
+          blockStr += blockLetter[j];
+        } else {
+          const blockLetter = alpha.get(input[i].toLowerCase()).slice((breakCount * 5) + 1);
+          console.log(blockLetter, "sliced in > 0");
+          blockStr += blockLetter[j];
+        }
+
         j++;
       }
 
