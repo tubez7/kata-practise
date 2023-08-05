@@ -1,31 +1,26 @@
 function blockPrint(input) {
   const { alpha } = require("../utils/utils.js");
 
+  const trimmedStr = input.trim();
   let blockStr = "";
   let breakCount = 0;
-  const characterLimit = input.length * 41;
 
-  while (blockStr.length < characterLimit) {
+  while (breakCount < 7) {
     let i = 0;
-    console.log(blockStr.length, "inside 1st loop");
 
-    while (i < input.length) {
+    while (i < trimmedStr.length) {
       let j = 0;
 
       while (j < 5) {
         const blockLetter = alpha
-          .get(input[i].toLowerCase())
+          .get(trimmedStr[i].toLowerCase())
           .slice(breakCount * 6);
-        console.log(blockLetter, "sliced in > 0---", j, breakCount * 6);
         blockStr += blockLetter[j];
-        console.log(blockStr.length, "inside letter loop");
-
         j++;
       }
 
-      if (i < input.length - 1) {
+      if (i < trimmedStr.length - 1) {
         blockStr += " ";
-        console.log(blockStr.length);
       }
 
       i++;
@@ -34,21 +29,12 @@ function blockPrint(input) {
     breakCount++;
 
     if (breakCount < 7) {
+      blockStr = blockStr.trimEnd();
       blockStr += "\n";
-      console.log(blockStr.length);
     }
   }
 
-  // const compare = alpha.get(input.toLowerCase());
-
-  console.log(blockStr, "str to be returned", blockStr.length);
-  // console.log(compare, compare.length);
-
-  //return alpha.get(input.toUpperCase());
-  return blockStr;
+  return blockStr.trimEnd();
 }
-
-// console.log(blockPrint("abc"));
-// console.log(blockPrint("heLLo WorLD"));
 
 module.exports = blockPrint;

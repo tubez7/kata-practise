@@ -3,7 +3,7 @@ const alpha = new Map([
   ["b", "BBBB \nB   B\nB   B\nBBBB \nB   B\nB   B\nBBBB "],
   ["c", " CCC \nC   C\nC    \nC    \nC    \nC   C\n CCC "],
   ["d", "DDDD \nD   D\nD   D\nD   D\nD   D\nD   D\nDDDD "],
-  ["e", "EEEE \nE    \nE    \nEEEE \nE    \nE    \nEEEE "],
+  ["e", "EEEEE\nE    \nE    \nEEEEE\nE    \nE    \nEEEEE"],
   ["f", "FFFF \nF    \nF    \nFFFF \nF    \nF    \nF    "],
   ["g", " GGG \nG   G\nG    \nG GGG\nG   G\nG   G\n GGG "],
   ["h", "H   H\nH   H\nH   H\nHHHHH\nH   H\nH   H\nH   H"],
@@ -16,8 +16,8 @@ const alpha = new Map([
   ["o", " OOO \nO   O\nO   O\nO   O\nO   O\nO   O\n OOO "],
   ["p", "PPPP \nP   P\nP   P\nPPPP \nP    \nP    \nP    "],
   ["q", " QQQ \nQ   Q\nQ   Q\nQ   Q\nQ  QQ\n QQQQ\n   Q "],
-  ["r", "RRRR \nR   R\nR   R\nRRRR \nR  R \nR   R\nR   R"],
-  ["s", " SSS \nS    \nS    \n SSS \n   S \n   S \nSSSS "],
+  ["r", "RRRR \nR   R\nR   R\nRRRR \nR R  \nR  R \nR   R"],
+  ["s", " SSS \nS   S\nS    \n SSS \n    S\nS   S\n SSS "],
   ["t", "TTTTT\n  T  \n  T  \n  T  \n  T  \n  T  \n  T  "],
   ["u", "U   U\nU   U\nU   U\nU   U\nU   U\nU   U\n UUU "],
   ["v", "V   V\nV   V\nV   V\nV   V\n V V \n V V \n  V  "],
@@ -28,6 +28,34 @@ const alpha = new Map([
   [" ", "     \n     \n     \n     \n     \n     \n     "],
 ]);
 
-const testStr = " AAA  ";
+const alphaMap = new Map([
+  [" ", ["     ", "     ", "     ", "     ", "     ", "     ", "     "]],
+  ["a", [" AAA ", "A   A", "A   A", "AAAAA", "A   A", "A   A", "A   A"]],
+  ["b", ["BBBB ", "B   B", "B   B", "BBBB ", "B   B", "B   B", "BBBB "]],
+  ["c", [" CCC ", "C   C", "C    ", "C    ", "C    ", "C   C", " CCC "]],
+  ["d", ["DDDD ", "D   D", "D   D", "D   D", "D   D", "D   D", "DDDD "]],
+  ["e", ["EEEEE", "E    ", "E    ", "EEEEE", "E    ", "E    ", "EEEEE"]],
+  ["f", ["FFFFF", "F    ", "F    ", "FFFFF", "F    ", "F    ", "F    "]],
+  ["g", [" GGG ", "G   G", "G    ", "G GGG", "G   G", "G   G", " GGG "]],
+  ["h", ["H   H", "H   H", "H   H", "HHHHH", "H   H", "H   H", "H   H"]],
+  ["i", ["IIIII", "  I  ", "  I  ", "  I  ", "  I  ", "  I  ", "IIIII"]],
+  ["j", ["JJJJJ", "    J", "    J", "    J", "    J", "    J", "JJJJ "]],
+  ["k", ["K   K", "K  K ", "K K  ", "KK   ", "K K  ", "K  K ", "K   K"]],
+  ["l", ["L    ", "L    ", "L    ", "L    ", "L    ", "L    ", "LLLLL"]],
+  ["m", ["M   M", "MM MM", "M M M", "M   M", "M   M", "M   M", "M   M"]],
+  ["n", ["N   N", "NN  N", "N   N", "N N N", "N   N", "N  NN", "N   N"]],
+  ["o", [" OOO ", "O   O", "O   O", "O   O", "O   O", "O   O", " OOO "]],
+  ["p", ["PPPP ", "P   P", "P   P", "PPPP ", "P    ", "P    ", "P    "]],
+  ["q", [" QQQ ", "Q   Q", "Q   Q", "Q   Q", "Q Q Q", "Q  QQ", " QQQQ"]],
+  ["r", ["RRRR ", "R   R", "R   R", "RRRR ", "R R  ", "R  R ", "R   R"]],
+  ["s", [" SSS ", "S   S", "S    ", " SSS ", "    S", "S   S", " SSS "]],
+  ["t", ["TTTTT", "  T  ", "  T  ", "  T  ", "  T  ", "  T  ", "  T  "]],
+  ["u", ["U   U", "U   U", "U   U", "U   U", "U   U", "U   U", " UUU "]],
+  ["v", ["V   V", "V   V", "V   V", "V   V", "V   V", " V V ", "  V  "]],
+  ["w", ["W   W", "W   W", "W   W", "W W W", "W W W", "W W W", " W W "]],
+  ["x", ["X   X", "X   X", " X X ", "  X  ", " X X ", "X   X", "X   X"]],
+  ["y", ["Y   Y", "Y   Y", " Y Y ", "  Y  ", "  Y  ", "  Y  ", "  Y  "]],
+  ["z", ["ZZZZZ", "    Z", "   Z ", "  Z  ", " Z   ", "Z    ", "ZZZZZ"]],
+]);
 
-module.exports = { alpha };
+module.exports = { alpha, alphaMap };
