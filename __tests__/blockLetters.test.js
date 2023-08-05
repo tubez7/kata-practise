@@ -5,7 +5,6 @@ describe("blockLetters", () => {
     const input = blockPrint("A");
     const output = " AAA\nA   A\nA   A\nAAAAA\nA   A\nA   A\nA   A";
 
-    console.log(output, output.length, "test");
     expect(input).toBe(output);
   });
 
@@ -21,7 +20,6 @@ describe("blockLetters", () => {
     const output =
       " AAA  BBBB\nA   A B   B\nA   A B   B\nAAAAA BBBB\nA   A B   B\nA   A B   B\nA   A BBBB";
 
-    console.log(output, output.length, "test");
     expect(input).toBe(output);
   });
 
@@ -29,8 +27,6 @@ describe("blockLetters", () => {
     const input = blockPrint("hello world");
     const output =
       "H   H EEEEE L     L      OOO        W   W  OOO  RRRR  L     DDDD\nH   H E     L     L     O   O       W   W O   O R   R L     D   D\nH   H E     L     L     O   O       W   W O   O R   R L     D   D\nHHHHH EEEEE L     L     O   O       W W W O   O RRRR  L     D   D\nH   H E     L     L     O   O       W W W O   O R R   L     D   D\nH   H E     L     L     O   O       W W W O   O R  R  L     D   D\nH   H EEEEE LLLLL LLLLL  OOO         W W   OOO  R   R LLLLL DDDD";
-
-    console.log(output, output.length, "test");
 
     expect(input).toBe(output);
   });
