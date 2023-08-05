@@ -1,62 +1,54 @@
 function blockPrint(input) {
   const { alpha } = require("../utils/utils.js");
-  console.log(input, "original input");
 
-  let blockStr = ""; //str to be returned
-  let breakCount = 0; 
-  let breakCountLimit = input.length * 7;
+  let blockStr = "";
+  let breakCount = 0;
+  const characterLimit = input.length * 41;
 
-  while (breakCount < breakCountLimit) {
+  while (blockStr.length < characterLimit) {
     let i = 0;
+    console.log(blockStr.length, "inside 1st loop");
 
     while (i < input.length) {
       let j = 0;
 
       while (j < 5) {
-        // const blockLetter = breakCount < 1 ? alpha.get(input[i].toLowerCase()).slice(breakCount) : alpha.get(input[i].toLowerCase()).slice((breakCount * 5) + 1);
-        
-        // blockStr += blockLetter[j];
-
-        if (breakCount < 1) {
-          const blockLetter = alpha.get(input[i].toLowerCase()).slice(breakCount);
-          console.log(blockLetter, "sliced in < 1");
-          blockStr += blockLetter[j];
-        } else {
-          const blockLetter = alpha.get(input[i].toLowerCase()).slice((breakCount * 5) + 1);
-          console.log(blockLetter, "sliced in > 0");
-          blockStr += blockLetter[j];
-        }
+        const blockLetter = alpha
+          .get(input[i].toLowerCase())
+          .slice(breakCount * 6);
+        console.log(blockLetter, "sliced in > 0---", j, breakCount * 6);
+        blockStr += blockLetter[j];
+        console.log(blockStr.length, "inside letter loop");
 
         j++;
       }
 
-      blockStr += " ";
+      if (i < input.length - 1) {
+        blockStr += " ";
+        console.log(blockStr.length);
+      }
+
       i++;
     }
 
-
-    blockStr += "\n";
     breakCount++;
+
+    if (breakCount < 7) {
+      blockStr += "\n";
+      console.log(blockStr.length);
+    }
   }
 
-  // while (i < 5) {
-  //   const blockLetter = alpha.get(input[j].toLowerCase());
-  //   blockStr += blockLetter[i]
-  // }
+  // const compare = alpha.get(input.toLowerCase());
 
-  // for (i = 0; i < input.length; i++) {
-  //   const blockLetter = alpha.get(input[i].toUpperCase());
-  //   for (j = 0; j < blockLetter.length; j++) {
-  //     if (blockLetter[j] === "\n") {
-  //       blockStr
-  //     }
-  //   }
-  // }
+  console.log(blockStr, "str to be returned", blockStr.length);
+  // console.log(compare, compare.length);
 
-  console.log(blockStr, "str to be returned");
- 
   //return alpha.get(input.toUpperCase());
   return blockStr;
 }
+
+// console.log(blockPrint("abc"));
+// console.log(blockPrint("heLLo WorLD"));
 
 module.exports = blockPrint;
