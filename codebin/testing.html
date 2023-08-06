@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+  <head>
+    <!-- <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> -->
+    <style>
+      body {
+        text-align: center;
+        background-color: black;
+        color: white;
+      }
+
+      #container {
+        border: solid;
+        border-color: aqua;
+        background-color: rgb(6, 38, 98);
+        max-width: 250px;
+        margin: auto;
+      }
+
+      #test {
+        color: rgb(255, 0, 195);
+      }
+
+      input {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+        <input type="text" placeholder="Your name is...?" oninput="handleChange(event)">
+      <h1 id="test">HELLO CLICKER!</h1>
+      <button onclick="handleClick(event)" id="clicker">CLICK ME!</button>
+      <p id="click-msg"></p>
+      <p id="counter">You have clicked me 0 times.</p>
+    </div>
+  </body>
+
+  <script type="application/javascript">
+    let count = 0;
+
+    const handleClick = (e) => {
+      e.preventDefault();
+      const counter = document.getElementById("counter");
+      count === 4 ? (count = 0) : count++;
+      counter.innerHTML = count > 1 ? `You have clicked me ${count} times.` : `You have clicked me ${count} time.`;
+      const msgToDisplay = document.getElementById("click-msg");
+      const button = document.getElementById("clicker");
+      const animation = document.getElementById("animation");
+
+      if (count < 1) {
+        msgToDisplay.innerText = "YOU KNOW WHAT YOU'VE DONE!";
+        button.innerText = "CLICK ME!";
+      } else if (count < 2) {
+        msgToDisplay.innerText = "YOU CLICKED ME!";
+        button.innerText = "CLICK ME AGAIN PLEASE!";
+        animation.display = "none";
+      } else if (count < 3) {
+        msgToDisplay.innerText = "YOU CLICKED ME TWICE!";
+        button.innerText = "CLICK ME AGAIN IF YOU DARE!";
+      } else if (count < 4) {
+        msgToDisplay.innerText = "STOP CLICKING ME PLEASE!";
+        button.innerText = "CLICK = PAIN!";
+      } else {
+        msgToDisplay.innerText = "OK. I GIVE UP!";
+        button.innerText = "CLICK TO RESET!";
+      }
+    };
+
+    const title = document.querySelector("h1");
+    let name = "";
+    function handleChange(e) {
+        name = e.target.value;
+        title.innerText = name.length < 1 ? "Hello Clicker!" : `Hello ${name}!`;
+    }
+  </script>
+</html>
