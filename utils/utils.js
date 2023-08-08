@@ -1,4 +1,4 @@
-const alpha = new Map([
+const alphaMap = new Map([
   ["a", " AAA \nA   A\nA   A\nAAAAA\nA   A\nA   A\nA   A"],
   ["b", "BBBB \nB   B\nB   B\nBBBB \nB   B\nB   B\nBBBB "],
   ["c", " CCC \nC   C\nC    \nC    \nC    \nC   C\n CCC "],
@@ -28,7 +28,7 @@ const alpha = new Map([
   [" ", "     \n     \n     \n     \n     \n     \n     "],
 ]);
 
-const alphaMap = new Map([
+const alpha = new Map([
   [" ", ["     ", "     ", "     ", "     ", "     ", "     ", "     "]],
   ["a", [" AAA ", "A   A", "A   A", "AAAAA", "A   A", "A   A", "A   A"]],
   ["b", ["BBBB ", "B   B", "B   B", "BBBB ", "B   B", "B   B", "BBBB "]],

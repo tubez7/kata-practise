@@ -1,32 +1,33 @@
 function blockPrint(input) {
-  const { alpha } = require("../utils/utils.js");
+  const { alphaMap: alpha } = require("../utils/utils.js"); //renames aphaMap as alpha
 
   const trimmedStr = input.trim();
-  let blockStr = "";
-  let breakCount = 0;
+  let blockStr = '';
+  //let breakCount = 0;
 
-  while (breakCount < 7) {
-    let i = 0;
+  for (let breakCount = 0; breakCount < 7; breakCount++) {
+    //let i = 0;
 
-    while (i < trimmedStr.length) {
+    for (let i = 0; i < trimmedStr.length; i++) {
       let j = 0;
 
       while (j < 5) {
         const blockLetter = alpha
           .get(trimmedStr[i].toLowerCase())
           .slice(breakCount * 6);
+        console.log(blockLetter, "blockLetter at index = ", j);
         blockStr += blockLetter[j];
         j++;
       }
 
       if (i < trimmedStr.length - 1) {
-        blockStr += " ";
+        blockStr += ' ';
       }
 
-      i++;
+      // i++;
     }
 
-    breakCount++;
+    //breakCount++;
 
     if (breakCount < 7) {
       blockStr = blockStr.trimEnd();
