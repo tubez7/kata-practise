@@ -20,18 +20,19 @@ function blockPrint(input) {
       blockString += stringLine;
 
       if (breakCount < 7) {
+        // adds a space between the characters on the same line
         blockString += " ";
       }
     }
 
     if (breakCount < 6) {
-      // trims any trailing whitespace on all lines except the final one and appends a line-break
+      // excluding the last line, trims any potential trailing whitespace after completing a line and appends a line-break to start new line
       blockString = blockString.trimEnd();
       blockString += "\n";
     }
   }
 
-  return blockString.trimEnd(); // removes final line-break.
+  return blockString.trimEnd(); // removes potential final space.
 }
 
 // function blockPrint(input) {
