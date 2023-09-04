@@ -1,7 +1,7 @@
 const blockPrint = require("../katas/blockLetters.js");
 
 describe("blockLetters", () => {
-  test.only("returns the correct result for a single character string", () => {
+  test("returns the correct result for a single character string", () => {
     const input = blockPrint("A");
     const output = " AAA\nA   A\nA   A\nAAAAA\nA   A\nA   A\nA   A";
 

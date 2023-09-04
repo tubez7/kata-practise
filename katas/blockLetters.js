@@ -1,41 +1,37 @@
 function blockPrint(input) {
-  const { alphaMap: alpha } = require("../utils/utils.js"); //renames aphaMap as alpha
+  const { alphaMap: alpha } = require("../utils/utils.js");
+  // imports and renames aphaMap as alpha
 
-  const trimmedStr = input.trim();
-  let blockStr = '';
-  //let breakCount = 0;
+  const trimmedStr = input.trim().toLowerCase();
+  // removes leading and trailing whitespace from function argument and converts to lowercase
+
+  let blockString = "";
 
   for (let breakCount = 0; breakCount < 7; breakCount++) {
-    //let i = 0;
-
+    // 1st loop iterates each line of the string to return
     for (let i = 0; i < trimmedStr.length; i++) {
-      let j = 0;
+      // 2nd loop iterates over the input string
+      const currentLetter = alpha.get(trimmedStr[i]);
+      const stringLine = currentLetter.slice(
+        breakCount * 6,
+        breakCount * 6 + 5
+      );
 
-      while (j < 5) {
-        const blockLetter = alpha
-          .get(trimmedStr[i].toLowerCase())
-          .slice(breakCount * 6);
-        console.log(blockLetter, "blockLetter at index = ", j);
-        blockStr += blockLetter[j];
-        j++;
-      }
+      blockString += stringLine;
 
       if (i < trimmedStr.length - 1) {
-        blockStr += ' ';
+        blockString += " ";
       }
-
-      // i++;
     }
 
-    //breakCount++;
-
-    if (breakCount < 7) {
-      blockStr = blockStr.trimEnd();
-      blockStr += "\n";
+    if (breakCount < 6) {
+      // trims any trailing whitespace on all lines except the final one and appends a line-break
+      blockString = blockString.trimEnd();
+      blockString += "\n";
     }
   }
 
-  return blockStr.trimEnd();
+  return blockString.trimEnd(); // removes final line-break.
 }
 
 // function blockPrint(input) {
@@ -59,6 +55,5 @@ function blockPrint(input) {
 //   console.log(blockStr, "return value");
 //   return blockStr;
 // }
-
 
 module.exports = blockPrint;
