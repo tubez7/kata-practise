@@ -2,16 +2,16 @@ function blockPrint(input) {
   const { alphaMap: alpha } = require("../utils/utils.js");
   // imports and renames aphaMap as alpha
 
-  const trimmedStr = input.trim().toLowerCase();
+  const trimmedString = input.trim().toLowerCase();
   // removes leading and trailing whitespace from function argument and converts to lowercase
 
   let blockString = "";
 
   for (let breakCount = 0; breakCount < 7; breakCount++) {
     // 1st loop iterates each line of the string to return
-    for (let i = 0; i < trimmedStr.length; i++) {
+    for (let i = 0; i < trimmedString.length; i++) {
       // 2nd loop iterates over the input string
-      const currentLetter = alpha.get(trimmedStr[i]);
+      const currentLetter = alpha.get(trimmedString[i]);
       const stringLine = currentLetter.slice(
         breakCount * 6,
         breakCount * 6 + 5
@@ -19,7 +19,7 @@ function blockPrint(input) {
 
       blockString += stringLine;
 
-      if (i < trimmedStr.length - 1) {
+      if (breakCount < 7) {
         blockString += " ";
       }
     }
