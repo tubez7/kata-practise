@@ -30,4 +30,50 @@ describe("landPerimeter()", () => {
 
     expect(landPerimeter(input)).toBe(26);
   });
+
+  it("Will return 6 when 2 'X's' in sequence in single grid column", () => {
+    const input = ["OOOOO", "OOOOO", "OOOXO", "OOOXO", "OOOOO"];
+
+    expect(landPerimeter(input)).toBe(6);
+  });
+
+  it("Will return 12 when 2 x 2 'X's' in sequence in a single grid column", () => {
+    const input = ["OOOXO", "OOOXO", "OOOOO", "OOOXO", "OOOXO"];
+
+    expect(landPerimeter(input)).toBe(12);
+  });
+
+  it("should return correct result for 1 island", () => {
+    const input = ["OOOOO", "OOOOO", "OOOOO", "XXOOO", "XOOOO"];
+
+    expect(landPerimeter(input)).toBe(8);
+  });
+
+  test("a more complex example", () => {
+    const input = ["XOOO", "XOXO", "XOXO", "OOXX", "OOOO"];
+
+    expect(landPerimeter(input)).toBe(18);
+  });
+
+  test("a further complex example", () => {
+    const input = ['XOOXO','XOOXO','OOOXO','XXOXO','OXOOO']; 
+
+    expect(landPerimeter(input)).toBe(24);
+  });
+
+  test("codewars complex example", () => {
+    const input = ["OXOOOX", "OXOXOO", "XXOOOX", "OXXXOO", "OOXOOX", "OXOOOO", "OOXOOX", "OOXOOO", "OXOOOO", "OXOOXX"]; 
+
+    expect(landPerimeter(input)).toBe(60);
+  });
+
+  test("another codewars complex example", () => {
+    const input = ["XOOOXOO", "OXOOOOO", "XOXOXOO", "OXOXXOO", "OOOOOXX", "OOOXOXX", "XXXXOXO"]; 
+
+    expect(landPerimeter(input)).toBe(54);
+  });
 });
+
+
+
+
